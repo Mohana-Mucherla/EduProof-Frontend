@@ -6,7 +6,8 @@ const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    password: ''
+    password: '',
+    role: 'STUDENT'
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -109,11 +110,26 @@ const Register = () => {
               type="password"
               name="password"
               className="form-input"
-              placeholder="Minimum 6 characters"
+              placeholder="Enter your password"
               value={formData.password}
               onChange={handleChange}
               required
             />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label">Role</label>
+            <select
+              name="role"
+              className="form-select"
+              value={formData.role}
+              onChange={handleChange}
+              required
+            >
+              <option value="STUDENT">Student</option>
+              <option value="RECRUITER">Recruiter</option>
+              <option value="ADMIN">Admin</option>
+            </select>
           </div>
 
           <button

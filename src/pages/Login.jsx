@@ -19,8 +19,11 @@ const Login = () => {
 
     try {
       const user = await login(email, password);
-      const isAdmin = user.role === 'ROLE_ADMIN' || user.role === 'ADMIN';
-      const target = location.state?.from?.pathname || (isAdmin ? '/admin' : '/student');
+      const role = (user.role || '').toUpperCase();
+      const isAdmin = role.includes('ADMIN');
+      const isRecruiter = role.includes('RECRUITER');
+      const targetPath = isAdmin ? '/admin' : isRecruiter ? '/recruiter' : '/student';
+      const target = location.state?.from?.pathname || targetPath;
       navigate(target, { replace: true });
     } catch (err) {
       setError(err.response?.data?.error || 'Invalid credentials. Please check your email and password.');

@@ -96,7 +96,7 @@ function App() {
       }}>
         <div>EduProof • Digital Credential & Certificate Verification System</div>
         <div style={{ marginTop: '4px' }}>
-          Anurag University, Hyderabad, Telangana, India • Powered by Spring Boot 3 & MySQL
+          Anurag University, Hyderabad, Telangana, India
         </div>
       </footer>
     </div>
