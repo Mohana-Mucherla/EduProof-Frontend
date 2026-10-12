@@ -21,28 +21,27 @@ const Home = () => {
         <div className="hero-content">
           <div className="hero-tagline">🏛️ Anurag University • Official Credential Registry</div>
           <h1>College Digital Certificate Issuance & Verification</h1>
-          <p className="hero-description">
+          <p className="hero-description" style={{color: 'var(--text-main)'}}>
             EduProof is an enterprise digital credential management system. It enables Anurag University
-            to digitally issue, securely store in MySQL, sign, and verify tamper-proof student degrees,
-            transcripts, bonafides, and merit certificates with instant QR verification.
+            It issues tamper‑proof digital degrees, transcripts, bonafides, and merit certificates,
+            stores them encrypted in MySQL, digitally signs each record, and provides instant QR‑based verification.
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
-            {user ? (
-              <Link to={isAdmin ? '/admin' : '/student'} className="btn btn-primary">
-                Go to {isAdmin ? 'Admin Dashboard' : 'Student Portal'} →
-              </Link>
-            ) : (
-              <>
-                <Link to="/login" className="btn btn-primary">
-                  Sign In to Portal
-                </Link>
-                <Link to="/verify" className="btn btn-secondary">
-                  Verify a Certificate
-                </Link>
-              </>
-            )}
-          </div>
+<div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+  {user ? null : (
+    <>
+      <Link to={isAdmin ? '/admin' : '/student'} className="btn btn-primary">
+        Go to {isAdmin ? 'Admin Dashboard' : 'Student Portal'} →
+      </Link>
+      <Link to="/login" className="btn btn-primary">
+        Sign In to Portal
+      </Link>
+      <Link to="/verify" className="btn btn-primary">
+        Verify a Certificate
+      </Link>
+    </>
+  )}
+</div>
         </div>
 
         {/* Quick Verification Search Box */}
@@ -57,15 +56,15 @@ const Home = () => {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.8rem' }}>
             <span style={{ fontSize: '1.3rem' }}>🔍</span>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 700 }}>Quick Credential Verification</h3>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff' }}>Quick Credential Verification</h3>
           </div>
-          <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '1.2rem' }}>
+          <p style={{ fontSize: '0.82rem', color: '#fff', marginBottom: '1.2rem' }}>
             Recruiters, universities, or employers can instantly verify the authenticity of any certificate issued by Anurag University.
           </p>
 
           <form onSubmit={handleVerifySubmit}>
             <div className="form-group">
-              <label className="form-label">Enter Certificate Code</label>
+              <label className="form-label" style={{color: '#fff'}}>Enter Certificate Code</label>
               <input
                 type="text"
                 className="form-input mono"

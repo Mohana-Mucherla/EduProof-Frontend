@@ -62,12 +62,10 @@ const Navbar = () => {
           {user ? (
             <>
               <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#f8fafc' }}>
-                  {user.name}
+                <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-main)' }}>
+                  {user.name} {isAdmin ? 'Admin' : isStudent ? 'Student' : ''}
                 </span>
-                <span style={{ fontSize: '0.7rem', color: isAdmin ? '#818cf8' : isRecruiter ? '#f59e0b' : '#34d399', fontWeight: 700 }}>
-                  {isAdmin ? 'COLLEGE ADMIN' : isRecruiter ? 'RECRUITER' : 'STUDENT'}
-                </span>
+
               </div>
               <button onClick={handleLogout} className="btn btn-secondary btn-sm" title="Sign out">
                 Sign Out

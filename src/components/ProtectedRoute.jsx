@@ -25,8 +25,8 @@ const ProtectedRoute = ({ children, requiredRole }) => {
     return <Navigate to="/student" replace />;
   }
 
-  if (requiredRole === 'STUDENT' && !isStudent && !isAdmin) {
-    return <Navigate to="/admin" replace />;
+  if (requiredRole === 'STUDENT' && !(isStudent || isAdmin || isRecruiter)) {
+    return <Navigate to="/" replace />;
   }
 
   if (requiredRole === 'RECRUITER' && !isRecruiter) {
