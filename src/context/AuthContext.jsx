@@ -34,9 +34,10 @@ export const AuthProvider = ({ children }) => {
 
   const isAdmin = user && (user.role === 'ROLE_ADMIN' || user.role === 'ADMIN');
   const isStudent = user && (user.role === 'ROLE_STUDENT' || user.role === 'STUDENT');
+  const isRecruiter = user && (user.role === 'ROLE_RECRUITER' || user.role === 'RECRUITER');
 
   return (
-    <AuthContext.Provider value={{ user, token, loading, login, logout, isAdmin, isStudent }}>
+    <AuthContext.Provider value={{ user, token, loading, login, logout, isAdmin, isStudent, isRecruiter }}>
       {children}
     </AuthContext.Provider>
   );

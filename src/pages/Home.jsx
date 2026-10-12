@@ -15,7 +15,7 @@ const Home = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="app-container home-page">
       {/* Hero Banner */}
       <section className="hero-banner">
         <div className="hero-content">

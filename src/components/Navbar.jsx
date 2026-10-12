@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 const Navbar = () => {
-  const { user, logout, isAdmin, isStudent } = useAuth();
+  const { user, logout, isAdmin, isStudent, isRecruiter } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -65,8 +65,8 @@ const Navbar = () => {
                 <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#f8fafc' }}>
                   {user.name}
                 </span>
-                <span style={{ fontSize: '0.7rem', color: isAdmin ? '#818cf8' : '#34d399', fontWeight: 700 }}>
-                  {isAdmin ? 'COLLEGE ADMIN' : 'STUDENT'}
+                <span style={{ fontSize: '0.7rem', color: isAdmin ? '#818cf8' : isRecruiter ? '#f59e0b' : '#34d399', fontWeight: 700 }}>
+                  {isAdmin ? 'COLLEGE ADMIN' : isRecruiter ? 'RECRUITER' : 'STUDENT'}
                 </span>
               </div>
               <button onClick={handleLogout} className="btn btn-secondary btn-sm" title="Sign out">

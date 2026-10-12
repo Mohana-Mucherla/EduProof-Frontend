@@ -131,6 +131,14 @@ const Login = () => {
             </button>
             <button
               type="button"
+              onClick={() => handleFillCredentials('recruiter@college.edu', 'Recruiter@123')}
+              className="btn btn-secondary btn-sm"
+              style={{ fontSize: '0.78rem' }}
+            >
+              🤝 Recruiter
+            </button>
+            <button
+              type="button"
               onClick={() => handleFillCredentials('rahul.kumar@college.edu', 'Student@123')}
               className="btn btn-secondary btn-sm"
               style={{ fontSize: '0.78rem' }}

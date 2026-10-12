@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 const ProtectedRoute = ({ children, requiredRole }) => {
-  const { user, loading, isAdmin, isStudent } = useAuth();
+  const { user, loading, isAdmin, isStudent, isRecruiter } = useAuth();
   const location = useLocation();
 
   if (loading) {
@@ -27,6 +27,10 @@ const ProtectedRoute = ({ children, requiredRole }) => {
 
   if (requiredRole === 'STUDENT' && !isStudent && !isAdmin) {
     return <Navigate to="/admin" replace />;
+  }
+
+  if (requiredRole === 'RECRUITER' && !isRecruiter) {
+    return <Navigate to="/student" replace />;
   }
 
   return children;

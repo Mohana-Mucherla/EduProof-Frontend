@@ -3,36 +3,43 @@
    ======================================================== */
 
 :root {
-  --bg-primary: #0a0e1a;
-  --bg-secondary: #0f172a;
-  --bg-card: rgba(15, 23, 42, 0.75);
-  --bg-card-hover: rgba(30, 41, 59, 0.85);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(99, 102, 241, 0.5);
+  /* Pastel background */
+  --bg-primary: #f5f7fa;           /* Light pastel blue */
+  --bg-secondary: #ffffff;         /* Clean white */
+  --bg-card: rgba(255, 255, 255, 0.85); /* Slightly translucent cards */
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-focus: rgba(173, 216, 230, 0.5); /* Light blue focus */
 
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  /* Text colors */
+  --text-main: #111827;            /* Dark gray for strong contrast */
+  --text-muted: #374151;           /* Darker muted */
+  --text-dim: #4a5568;             /* Slightly lighter dim for low emphasis */
 
-  --accent-indigo: #6366f1;
-  --accent-cyan: #06b6d4;
-  --accent-emerald: #10b981;
-  --accent-amber: #f59e0b;
-  --accent-rose: #f43f5e;
-  --accent-gold: #d97706;
+  /* Pastel accent palette */
+  --accent-pink: #f9a8d4;          /* Soft pink */
+  --accent-lavender: #c4b5fd;      /* Light lavender */
+  --accent-mint: #a7f3d0;          /* Mint green */
+  --accent-peach: #fbbf24;         /* Warm peach */
+  --accent-sky: #7dd3fc;           /* Sky blue */
+  --accent-cream: #fde68a;         /* Cream yellow */
+  --accent-rose: #b91c1c;          /* Dark rose for danger buttons */
 
-  --gradient-brand: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
-  --gradient-gold: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+  /* Gradient for branding */
+  --gradient-brand: linear-gradient(135deg, var(--accent-lavender) 0%, var(--accent-sky) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--accent-peach) 0%, var(--accent-cream) 100%);
 
+  /* Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
 
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
-  --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.25);
+  /* Shadows (softer for pastel) */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 16px 30px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(173, 216, 230, 0.2);
 }
 
 * {
@@ -70,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   z-index: 100;
   backdrop-filter: blur(16px);
-  background: rgba(10, 14, 26, 0.85);
+  background: var(--bg-card);
   border-bottom: 1px solid var(--border-subtle);
   padding: 0.85rem 2rem;
   display: flex;
@@ -102,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 .brand-title {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-main);
   letter-spacing: -0.02em;
 }
 
@@ -130,9 +137,14 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.2s ease;
 }
 
-.nav-link:hover, .nav-link.active {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.06);
+.nav-link:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Preserve active state color */
+.nav-link.active {
+  color: var(--accent-cyan);
 }
 
 .nav-link.active {
@@ -144,6 +156,13 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
+
+/* Home page specific background */
+.home-page {
+  background: url('file:///C:/Users/mohana/.gemini/antigravity-ide/brain/fc28b3c6-a3d5-4755-9c64-8ddf991b6d00/home_background_1791707401981.jpg') center/cover no-repeat;
+  min-height: 100vh;
+}
+
 }
 
 .hero-banner {
@@ -356,13 +375,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: var(--accent-indigo);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+  background: var(--accent-mint);
+  color: #1a202c;
+  box-shadow: 0 4px 12px rgba(173, 216, 230, 0.3);
 }
 
 .btn-primary:hover {
-  background: #4f46e5;
+  background: var(--accent-pink);
   transform: translateY(-1px);
 }
 
@@ -374,7 +393,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+  color: var(--text-main); /* keep dark text for readability */
 }
 
 .btn-danger {
@@ -405,33 +424,32 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-input, .form-select, .form-textarea {
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 0.65rem 1rem;
-  color: #fff;
+  color: var(--text-main);
   font-size: 0.9rem;
   outline: none;
   transition: all 0.2s ease;
 }
 
+
 .form-input:focus, .form-select:focus, .form-textarea:focus {
-  border-color: var(--accent-indigo);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.25);
+  border-color: var(--accent-mint);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.25);
 }
 
 .form-select {
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text-main);
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-  background: var(--bg-secondary);
-  color: #fff;
-}
+
 
 .form-row {
   display: grid;
