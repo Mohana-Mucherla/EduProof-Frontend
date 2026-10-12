@@ -47,8 +47,8 @@ const Profile = () => {
             justifyContent: 'space-between',
             alignItems: 'center'
           }}>
-            <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Email Address</span>
-            <span className="mono" style={{ color: '#fff', fontWeight: 600 }}>{user?.email}</span>
+            <span style={{ color: '#000', fontSize: '0.85rem' }}>Email Address</span>
+            <span className="mono" style={{ color: '#000', fontWeight: 600 }}>{user?.email}</span>
           </div>
 
           {user?.rollNumber && (
@@ -76,7 +76,7 @@ const Profile = () => {
             alignItems: 'center'
           }}>
             <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Institution</span>
-            <span style={{ color: '#fff', fontWeight: 600 }}>Anurag University, Hyderabad</span>
+            <span style={{ color: '#000', fontWeight: 600 }}>Anurag University, Hyderabad</span>
           </div>
 
           <div style={{

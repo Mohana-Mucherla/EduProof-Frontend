@@ -72,6 +72,9 @@ const StudentDashboard = () => {
             <div style={{ fontSize: '0.85rem', color: '#fff', marginTop: '4px' }}>
               {profile.departmentName}
             </div>
+            <div style={{ fontSize: '0.85rem', color: '#fff', marginTop: '4px' }}>
+              {profile.email}
+            </div>
             <div style={{ fontSize: '0.8rem', color: 'var(--accent-amber)', marginTop: '4px', fontWeight: 700 }}>
               CGPA: {profile.cgpa ? `${profile.cgpa} / 10.00` : 'N/A'}
             </div>
