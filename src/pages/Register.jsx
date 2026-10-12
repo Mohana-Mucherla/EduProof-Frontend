@@ -7,7 +7,8 @@ const Register = () => {
     name: '',
     email: '',
     password: '',
-    role: 'STUDENT'
+    role: 'STUDENT',
+    rollNumber: ''
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -131,6 +132,20 @@ const Register = () => {
               <option value="ADMIN">Admin</option>
             </select>
           </div>
+
+          {formData.role === 'STUDENT' && (
+            <div className="form-group">
+              <label className="form-label">Student Roll Number (Optional)</label>
+              <input
+                type="text"
+                name="rollNumber"
+                className="form-input mono"
+                placeholder="e.g. 22AG1A0505 (auto-generated if left blank)"
+                value={formData.rollNumber}
+                onChange={handleChange}
+              />
+            </div>
+          )}
 
           <button
             type="submit"

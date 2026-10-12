@@ -31,12 +31,12 @@ const Verification = () => {
       <div className="panel" style={{ padding: '2rem' }}>
         <form onSubmit={handleVerify}>
           <div className="form-group">
-            <label className="form-label">Certificate Identification Code</label>
+            <label className="form-label">Candidate Student Name or Certificate Code</label>
             <input
               type="text"
-              className="form-input mono"
+              className="form-input"
               style={{ fontSize: '1.05rem', padding: '0.85rem 1rem' }}
-              placeholder="e.g. EDU-CERT-2026-00001"
+              placeholder="e.g. Rahul Kumar or EDU-CERT-2026-00001"
               value={code}
               onChange={(e) => setCode(e.target.value)}
               required

@@ -218,7 +218,7 @@ const IssueCertificate = () => {
                 >
                   {students.map((student) => (
                     <option key={student.studentId} value={student.studentId}>
-                      {student.name} ({student.rollNumber}) — {student.departmentName}
+                      {student.name} ({student.rollNumber}) — {student.departmentName || 'Computer Science & Engineering'}
                     </option>
                   ))}
                 </select>

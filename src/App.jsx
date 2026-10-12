@@ -72,6 +72,16 @@ function App() {
               </ProtectedRoute>
             }
           />
+          {/* Recruiter Protected Routes */}
+          <Route
+            path="/recruiter"
+            element={
+              <ProtectedRoute requiredRole="RECRUITER">
+                <RecruiterDashboard />
+              </ProtectedRoute>
+            }
+          />
+
           <Route
             path="/profile"
             element={

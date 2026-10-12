@@ -49,7 +49,7 @@ const AdminDashboard = () => {
     return (
       <div className="app-container" style={{ textAlign: 'center', padding: '4rem' }}>
         <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⏳</div>
-        <p style={{ color: 'var(--text-muted)' }}>Querying MySQL Database (eduproofd_db)...</p>
+        <p style={{ color: 'var(--text-muted)' }}>Querying MySQL Database (eduproof)...</p>
       </div>
     );
   }
@@ -68,7 +68,7 @@ const AdminDashboard = () => {
         <div>
           <h1 style={{ fontSize: '2rem', fontWeight: 800 }}>Admin Operations Console</h1>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-            Anurag University Credential Management • Connected to MySQL: <span className="mono" style={{ color: '#34d399' }}>eduproofd_db</span>
+            Anurag University Credential Management • Connected to MySQL: <span className="mono" style={{ color: '#34d399' }}>eduproof</span>
           </p>
         </div>
 

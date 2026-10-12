@@ -64,11 +64,11 @@ const Home = () => {
 
           <form onSubmit={handleVerifySubmit}>
             <div className="form-group">
-              <label className="form-label" style={{color: '#fff'}}>Enter Certificate Code</label>
+              <label className="form-label" style={{color: '#fff'}}>Enter Student Name or Certificate Code</label>
               <input
                 type="text"
-                className="form-input mono"
-                placeholder="e.g. EDU-CERT-2026-00001"
+                className="form-input"
+                placeholder="e.g. Rahul Kumar or EDU-CERT-2026-00001"
                 value={certCode}
                 onChange={(e) => setCertCode(e.target.value)}
                 required
@@ -79,8 +79,15 @@ const Home = () => {
             </button>
           </form>
 
-          <div style={{ marginTop: '1rem', fontSize: '0.74rem', color: 'var(--text-dim)' }}>
-            Try sample codes:{' '}
+          <div style={{ marginTop: '1rem', fontSize: '0.74rem', color: '#fff' }}>
+            Try samples:{' '}
+            <span
+              onClick={() => navigate('/verify/Rahul%20Kumar')}
+              style={{ color: 'var(--accent-cyan)', cursor: 'pointer', textDecoration: 'underline' }}
+            >
+              Rahul Kumar
+            </span>
+            {' | '}
             <span
               onClick={() => navigate('/verify/EDU-CERT-2026-00001')}
               style={{ color: 'var(--accent-cyan)', cursor: 'pointer', textDecoration: 'underline' }}

@@ -89,7 +89,7 @@ const Profile = () => {
             alignItems: 'center'
           }}>
             <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Database Ledger</span>
-            <span className="mono" style={{ color: '#34d399', fontSize: '0.85rem' }}>MySQL (eduproofd_db)</span>
+            <span className="mono" style={{ color: '#34d399', fontSize: '0.85rem' }}>MySQL (eduproof)</span>
           </div>
         </div>
       </div>

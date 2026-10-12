@@ -37,7 +37,7 @@ const VerificationResult = () => {
         <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚡</div>
         <h2 style={{ fontSize: '1.5rem', fontWeight: 700 }}>Querying Institutional Ledger...</h2>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
-          Searching MySQL database <code className="mono">eduproofd_db</code> for certificate ID: <strong className="mono">{code}</strong>
+          Searching MySQL database <code className="mono">eduproof</code> for: <strong className="mono">{code}</strong>
         </p>
       </div>
     );
@@ -53,7 +53,7 @@ const VerificationResult = () => {
             {error || 'An unexpected error occurred while querying the certificate registry.'}
           </p>
           <Link to="/verify" className="btn btn-secondary">
-            ← Try Another Certificate ID
+            ← Try Another Search
           </Link>
         </div>
       </div>

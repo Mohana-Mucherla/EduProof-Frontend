@@ -42,7 +42,7 @@ const Navbar = () => {
               All Certificates
             </NavLink>
             <NavLink to="/issue" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-              + Issue
+              + Issue Certificate
             </NavLink>
           </>
         )}
@@ -56,6 +56,12 @@ const Navbar = () => {
               Profile
             </NavLink>
           </>
+        )}
+
+        {user && isRecruiter && (
+          <NavLink to="/recruiter" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+            Candidate Verification
+          </NavLink>
         )}
 
         <div style={{ marginLeft: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
