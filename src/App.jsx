@@ -23,11 +23,19 @@ function App() {
       <main style={{ minHeight: 'calc(100vh - 75px)', paddingBottom: '3rem' }}>
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate to="/verify" replace />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/verify" element={<Verification />} />
-          <Route path="/verify/:code" element={<VerificationResult />} />
+          <Route
+            path="/verify/:code"
+            element={
+              <ProtectedRoute requiredRole="VERIFIER">
+                <VerificationResult />
+              </ProtectedRoute>
+            }
+          />
 
           {/* Admin Protected Routes */}
           <Route

@@ -22,15 +22,20 @@ const ProtectedRoute = ({ children, requiredRole }) => {
   }
 
   if (requiredRole === 'ADMIN' && !isAdmin) {
-    return <Navigate to="/student" replace />;
+    return <Navigate to="/verify" replace />;
   }
 
   if (requiredRole === 'STUDENT' && !(isStudent || isAdmin || isRecruiter)) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/verify" replace />;
   }
 
   if (requiredRole === 'RECRUITER' && !isRecruiter) {
-    return <Navigate to="/student" replace />;
+    return <Navigate to="/verify" replace />;
+  }
+
+  // VERIFIER = Admin OR Recruiter (used for verification result page)
+  if (requiredRole === 'VERIFIER' && !(isAdmin || isRecruiter)) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   return children;

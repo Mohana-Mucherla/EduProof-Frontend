@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <header className="navbar">
-      <Link to="/" className="nav-brand">
+      <Link to="/home" className="nav-brand">
         <div className="brand-icon">🎓</div>
         <div>
           <div className="brand-title">EduProof</div>
@@ -22,7 +22,7 @@ const Navbar = () => {
       </Link>
 
       <nav className="nav-links">
-        <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} end>
+        <NavLink to="/home" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
           Home
         </NavLink>
 
